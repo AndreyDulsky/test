@@ -144,6 +144,7 @@ class FileListBloc extends Bloc<FileStatusEvent, FileState> {
   @override
   Future<void> close() {
     _controller.close();
+    subscription.cancel();
     return super.close();
   }
 
